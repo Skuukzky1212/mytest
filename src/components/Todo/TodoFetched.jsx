@@ -6,7 +6,6 @@ import { fetchTodos } from "../../redux/dispatchAction";
 const TodoFetched = () => {
   const todoFetchedList = useSelector(todoFetchedSelector);
   const { todos, loading, error } = todoFetchedList;
-  console.log(todoFetchedList);
   const dispatchFetchTodo = useDispatch();
   useEffect(() => {
     dispatchFetchTodo(
@@ -19,7 +18,7 @@ const TodoFetched = () => {
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>
+          <li key={index} style={{ textAlign: "left" }}>
             {todo.title} {todo.completed ? "✅" : ""}
           </li>
         ))}
