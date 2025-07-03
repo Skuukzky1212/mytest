@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { todoSelector } from "../../redux/selectors";
+import { todosSelector } from "../../redux/selectors";
 
 const Todo = () => {
-  const todoList = useSelector(todoSelector);
+  const todoList = useSelector(todosSelector);
   return (
     <>
       {todoList &&
