@@ -3,14 +3,20 @@ const fetchTodoSlice = createSlice({
   name: "todoApi",
   initialState: {
     todos: [],
-    loading: false,
     error: null,
   },
   reducers: {
-    fetchTodoRequest: (state, action) => {},
-    fetchTodoSuccess: (state, action) => {},
-    fetchTodoError: (state, action) => {},
+    fetchTodos: (state, action) => {
+      {
+        if (action.payload.todos) {
+          state.todos = action.payload.todos;
+        }
+        state.error = action.payload.error;
+      }
+    },
   },
 });
+
+export const { fetchTodos } = fetchTodoSlice.actions;
 
 export default fetchTodoSlice.reducer;

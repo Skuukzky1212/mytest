@@ -5,8 +5,17 @@ const Todo = () => {
   const todoList = useSelector(todosSelector);
   return (
     <>
-      {todoList &&
-        todoList.map((todo) => <div key={todo.id}>{todo.todoName}</div>)}
+      {todoList.length > 0 && (
+        <p>
+          New added:{" "}
+          {todoList.map((todo, index) => (
+            <span key={todo.id}>
+              {todo.todoName}
+              {index < todoList.length - 1 ? ", " : ""}
+            </span>
+          ))}
+        </p>
+      )}
     </>
   );
 };

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-// import { addTodo } from "../redux/dispatchAction";
 import Todo from "../components/Todo/Todo";
-// import TodoFetched from "../components/Todo/TodoFetched";
+import TodoFetched from "../components/Todo/TodoFetched";
 import { addTodo } from "../redux/slice/todoSlice";
 export default function TodoPage() {
   const [todo, setTodo] = useState("");
@@ -40,7 +39,7 @@ export default function TodoPage() {
         </button>
       </div>
       <h2>TO DO LIST API Fetched!</h2>
-      {/* <TodoFetched /> */}
+      <TodoFetched />
     </>
   );
 }

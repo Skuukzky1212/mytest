@@ -10,6 +10,7 @@ export default function HomePage() {
     <div>
       <h1>Welcome, {user}</h1>
       <button onClick={() => dispatch(logout())}>Logout</button>
+      <h1>Data React query fetched below!</h1>
       <PostsList />
     </div>
   );
